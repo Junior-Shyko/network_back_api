@@ -1,0 +1,115 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "address": {
+      "type": "string",
+      "maxLength": 255,
+      "minLength": 3
+    },
+    "number": {
+      "type": "string",
+      "default": "0",
+      "maxLength": 100
+    },
+    "complement": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "district": {
+      "type": "string",
+      "maxLength": 150
+    },
+    "city": {
+      "type": "string",
+      "maxLength": 150
+    },
+    "state": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "birthday": {
+      "type": "date",
+      "unique": false,
+      "required": true
+    },
+    "marital_status": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "batized": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "sex": {
+      "type": "string",
+      "maxLength": 15
+    }
+  }
+}

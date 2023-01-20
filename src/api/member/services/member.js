@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * id service
+ * member service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::id.id');
+module.exports = createCoreService('api::member.member');

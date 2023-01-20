@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "living_groups",
+  "info": {
+    "singularName": "living-group",
+    "pluralName": "living-groups",
+    "displayName": "Living Group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "time_start": {
+      "type": "time"
+    },
+    "time_end": {
+      "type": "time"
+    },
+    "total_people_present": {
+      "type": "integer",
+      "required": true
+    },
+    "total_members": {
+      "type": "integer"
+    },
+    "total_visitant": {
+      "type": "integer"
+    },
+    "total_visitant_permanent": {
+      "type": "integer"
+    },
+    "obs_intercurrence": {
+      "type": "text"
+    },
+    "Ice_breakers": {
+      "type": "boolean"
+    },
+    "praise": {
+      "type": "boolean"
+    },
+    "fellowship": {
+      "type": "boolean",
+      "default": true
+    },
+    "evangelism": {
+      "type": "boolean"
+    },
+    "edification": {
+      "type": "boolean"
+    },
+    "obs_evangelism": {
+      "type": "text"
+    },
+    "obs_problem": {
+      "type": "text"
+    },
+    "group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::group.group",
+      "inversedBy": "living_group"
+    }
+  }
+}

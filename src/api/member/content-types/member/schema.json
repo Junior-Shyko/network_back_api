@@ -15,11 +15,76 @@
     "name": {
       "type": "string"
     },
+    "alias_member": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "password": {
+      "type": "password",
+      "required": true,
+      "minLength": 8
+    },
+    "address": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "complement": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "district": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "phone": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "date",
+      "required": true
+    },
+    "marital_status": {
+      "type": "string"
+    },
+    "batized": {
+      "type": "boolean",
+      "default": false
+    },
+    "sex": {
+      "type": "string",
+      "default": "Masculino"
+    },
     "links": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::link.link",
       "mappedBy": "member"
+    },
+    "institutions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::institution.institution",
+      "mappedBy": "member"
+    },
+    "group": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::group.group",
+      "inversedBy": "member"
     }
   }
 }

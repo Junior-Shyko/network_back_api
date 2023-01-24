@@ -110,6 +110,27 @@
     "sex": {
       "type": "string",
       "maxLength": 15
+    },
+    "alias_users": {
+      "type": "string"
+    },
+    "links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::link.link",
+      "mappedBy": "user"
+    },
+    "institutions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::institution.institution",
+      "mappedBy": "user"
+    },
+    "groups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::group.group",
+      "mappedBy": "user"
     }
   }
 }

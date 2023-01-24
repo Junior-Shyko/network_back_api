@@ -48,6 +48,12 @@
       "relation": "oneToOne",
       "target": "api::living-group.living-group",
       "mappedBy": "group"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "groups"
     }
   }
 }

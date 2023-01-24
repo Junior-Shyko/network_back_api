@@ -52,6 +52,12 @@
       "relation": "oneToOne",
       "target": "api::group.group",
       "mappedBy": "institution"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "institutions"
     }
   }
 }

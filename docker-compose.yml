@@ -13,7 +13,7 @@ services:
     volumes: 
       - ~/dev/network_back_api/data:/var/lib/mysql
     ports:
-      - 3306:3306
+      - 3336:3306
     environment:
       MYSQL_ROOT_PASSWORD: senha
       MYSQL_DATABASE: network_api

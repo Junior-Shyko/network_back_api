@@ -131,6 +131,12 @@
       "relation": "oneToMany",
       "target": "api::group.group",
       "mappedBy": "user"
+    },
+    "post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

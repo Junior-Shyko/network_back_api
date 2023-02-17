@@ -132,11 +132,23 @@
       "target": "api::group.group",
       "mappedBy": "user"
     },
-    "post": {
+    "posts": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToMany",
       "target": "api::post.post",
-      "mappedBy": "users_permissions_user"
+      "mappedBy": "users_permissions_users"
+    },
+    "like": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::like.like",
+      "inversedBy": "users_permissions_users"
+    },
+    "heart": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::heart.heart",
+      "inversedBy": "users_permissions_users"
     }
   }
 }

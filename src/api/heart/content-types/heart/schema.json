@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hearts",
+  "info": {
+    "singularName": "heart",
+    "pluralName": "hearts",
+    "displayName": "Heart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heart": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "heart"
+    },
+    "post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post",
+      "inversedBy": "heart_post"
+    }
+  }
+}

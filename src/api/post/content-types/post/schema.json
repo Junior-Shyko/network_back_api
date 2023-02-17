@@ -24,11 +24,31 @@
         "images"
       ]
     },
-    "users_permissions_user": {
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "posts"
+    },
+    "like": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "heart": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "like_post": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "post"
+      "target": "api::like.like",
+      "mappedBy": "post"
+    },
+    "heart_post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::heart.heart",
+      "mappedBy": "post"
     }
   }
 }

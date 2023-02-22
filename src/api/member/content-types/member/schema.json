@@ -74,12 +74,6 @@
       "target": "api::link.link",
       "mappedBy": "member"
     },
-    "institutions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::institution.institution",
-      "mappedBy": "member"
-    },
     "group": {
       "type": "relation",
       "relation": "oneToOne",
